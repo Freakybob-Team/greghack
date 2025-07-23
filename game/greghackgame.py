@@ -22,3 +22,5 @@ if (cmd.lower() == "help"):
     print("hack - hacking tool if you have all info")
     print("infosearch - search for info about people")
     cmd = input()
+if (cmd.lower() == "infosearch"):
+    cls()
