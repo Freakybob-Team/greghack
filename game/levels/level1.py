@@ -9,17 +9,6 @@ print("Go to https://greghack.freakybob.site and click on BaseLook.")
 print("It'll bring you to Bob's BaseLook.")
 print("Now, type infosearch")
 cmd = input()
-
-if (cmd.lower() == "hack"):
-    print("Nice! Enter bob as the username and the password you got from infosearch.")
-    user = input("enter username: ")
-    password = input("enter password: ")
-    if ("bob" in user):
-        if (password == "catsarecool123"):
-            print("Beep boop. Bob has been hacked.")
-            print("You did it!")
-            print("GregSend: You got pinged in Friends. 'Greg! Check the news, now!'")
-            print("Go back to the greghack website and click on the browser!")
     
 if (cmd.lower() == "help"):
     print("hack - hacking tool if you have all info")
@@ -36,3 +25,14 @@ if (cmd.lower() == "infosearch"):
         print("Found!")
         print("bob's BaseLook password found. catsarecool123")
         print("Now, enter hack.")
+
+if (cmd.lower() == "hack"):
+    print("Nice! Enter bob as the username and the password you got from infosearch.")
+    user = input("enter username: ")
+    password = input("enter password: ")
+    if ("bob" in user):
+        if (password == "catsarecool123"):
+            print("Beep boop. Bob has been hacked.")
+            print("You did it!")
+            print("GregSend: You got pinged in Friends. 'Greg! Check the news, now!'")
+            print("Go back to the greghack website and click on the browser!")
