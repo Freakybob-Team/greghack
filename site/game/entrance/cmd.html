@@ -17,8 +17,176 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+            input {
+  border-radius: 5px;
+  background: black;
+  border: solid 1px black;
+  height: 20px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  width: 200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.big-button {
+  height: 50px;
+  padding: 0px;
+}
+
+.login {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 188px;
+}
+
+input[type="button"],
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+
+#login {
+  transition: 0.2s;
+  border-radius: 5px;
+  position: fixed;
+  background: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  top: 8px;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  height: 150px;
+  z-index: 10000;
+}
+
+#loginBackground {
+  transition: 0.2s;
+  background-color: black;
+  opacity: 0.5;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  margin: 0px;
+  z-index: 9999;
+}
+
+.small-button {
+  width: 40px;
+  height: 40px;
+}
+
+.no-border {
+  border: none;
+}
+
+.close {
+  color: red;
+  left: 30px;
+  bottom: 20px;
+}
+
+.accept {
+  color: lime;
+  right: 30px;
+  top: 25px;
+}
+
+.login-button {
+  position: relative;
+  font-size: 26px;
+  border-radius: 100%;
+  outline: none;
+  transition: 0.4s;
+}
+
+.login-button:hover,
+.login-button:focus,
+.login-button:active {
+  background: rgb(127, 127, 255);
+  color: white;
+}
+
+.shadow {
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5), 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+body {
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.2), 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.center {
+  text-align: center;
+}
+
+.login-title {
+  position: relative;
+  bottom: 14px;
+}
+</style>
 </head>
 <body>
-    <p>welcome to govsee admin panel, greg!</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <p>Welcome to govsee admin panel, greg!</p>
+    <p>⚠️ CEO has been notified of your access.</p>
+    <p>🚨 Erasing GovSee... Please wait.</p>
+      <input class="shadow no-border big-button" type="button" value="Admin Access Needed... Click to confirm" onclick="showLogin();">
+<div id="loginBackground" style="opacity: 0; display: none;"></div>
+<div id="login" style="opacity: 0; display: none;" class="shadow" action="https://example.com">
+  <h3 class="login-title">Login to GovSee</h3>
+  <input placeholder="Password" id="p" class="login shadow no-border" type="password"><br/>
+  <input class="shadow no-border small-button accept login-button" type="button" onclick="hideLogin(); login(); " value="&#10003;"><br/>
+  <input class="shadow no-border small-button close login-button" type="button" onclick="hideLogin(); " value="&cross;">
+</div>
+<script>
+    function showLogin() {
+  // .show() doesn't work with transitions
+  $("#u, #p").val("");
+  $("#login").show().css("opacity", "1");
+  $("#loginBackground").show().css("opacity", "0.5");
+}
+
+function hideLogin() {
+  // .hide() doesn't work with transitions,
+  // but you need it for user interaction
+  // with objects behind it.
+  $("#login, #loginBackground").css("opacity", "0").hide();
+}
+
+function login() {
+  var password = $("#p").val();
+  if (password === "cubsqwi21") {
+    window.location.href = "erasure.html";
+  }
+}
+</script>
 </body>
 </html>
