@@ -9,7 +9,7 @@ print("Hi! Sorry, I should introduce myself. I'm the game.")
 print("Your task is to hack into Bob's account.")
 webbrowser.open("https://freakybob-team.github.io/greghack/game/game.html")
 print("Click on BaseLook.")
-print("It'll bring you to Bob's BaseLook.")
+print("It'll bring you to BaseLook. Search for Bob's profile by typing in Bob.")
 print("Now, type infosearch")
 cmd = input()
     
@@ -23,13 +23,15 @@ if (cmd.lower() == "infosearch"):
     print("infosearch - very legal fr")
     print("Great! Enter bob into the prompt below.")
     name = input("name of person: ")
+    dob = input("date of birth (mm/dd/year): ")
     if (name == "bob"):
-        print("Searching...")
-        time.sleep(3)
-        print("Found!")
-        print("bob's BaseLook password found. catsarecool123")
-        print("Now, enter hack.")
-        cmdagain = input()
+        if (dob == "6/1/1960"):
+            print("Searching...")
+            time.sleep(3)
+            print("Found!")
+            print("bob's BaseLook password found. catsarecool123")
+            print("Now, enter hack.")
+            cmdagain = input()
 
 if (cmd.lower() == "hack"):
     print("Nice! Enter bob as the username and the password you got from infosearch.")
