@@ -43,4 +43,8 @@ if (answers['start'] == "Download Levels"):
     else:
         print("Oops! There was an error and we couldn't download GregHacks levels.")
     print("Done! Level one has been downloaded from https://github.com/Freakybob-Team/greghack/tree/main/game/levels/level1.py")
-    exec(open('levels/level1.py').read())
+    exec(open('levels/lvl.py').read())
+
+if (answers['start'] == "Start"):
+    print("Have fun! :)")
+    exec(open('levels/lvl.py').read())
