@@ -6,7 +6,7 @@ except:
     print("Please install inquirer with pip install inquirer!")
     print("GregHack will now quit.")
     sys.exit()
-import requests
+import urllib.request
 
 def cls():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -31,16 +31,11 @@ answers = inquirer.prompt(menu)
 
 if (answers['start'] == "Download Levels"):
     print("This will download Level 1 for playing.")
-    url = 'https://github.com/Freakybob-Team/greghack/blob/main/game/levels/level1.py?raw=true'
-    response = requests.get(url)
-    file_Path = "levels/level1.py"
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        with open(file_Path, 'wb') as file:
-            file.write(response.content)
-            print('File downloaded successfully')
-    else:
+    if os.path.exists("levels/"):
+        os.mkdir("levels/")
+    try:
+        urllib.request.urlretrieve("https://github.com/Freakybob-Team/greghack/blob/main/game/levels/level1.py?raw=true", "levels/level1.py")
+    except:
         print("Oops! There was an error and we couldn't download GregHacks levels.")
     print("Done! Level one has been downloaded from https://github.com/Freakybob-Team/greghack/tree/main/game/levels/level1.py")
     exec(open('levels/lvl.py').read())
