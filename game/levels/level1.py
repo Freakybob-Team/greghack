@@ -1,11 +1,14 @@
 import os
+import webbrowser
+import time
 
 def cls():
     os.system('cls' if os.name=='nt' else 'clear') # idk if we should use this but ill keep it in
 print("GregHack Command Prompt")
 print("Hi! Sorry, I should introduce myself. I'm the game.")
 print("Your task is to hack into Bob's account.")
-print("Go to https://greghack.freakybob.site and click on BaseLook.")
+webbrowser.open("https://freakybob-team.github.io/greghack/game/game.html")
+print("Click on BaseLook.")
 print("It'll bring you to Bob's BaseLook.")
 print("Now, type infosearch")
 cmd = input()
@@ -16,11 +19,13 @@ if (cmd.lower() == "help"):
     cmd = input()
     
 if (cmd.lower() == "infosearch"):
+    cls()
     print("infosearch - very legal fr")
     print("Great! Enter bob into the prompt below.")
     name = input("name of person: ")
     if (name == "bob"):
         print("Searching...")
+        time.sleep(3)
         print("Found!")
         print("bob's BaseLook password found. catsarecool123")
         print("Now, enter hack.")

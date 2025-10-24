@@ -1,5 +1,11 @@
 import os
-import inquirer
+import sys
+try:
+    import inquirer
+except:
+    print("Please install inquirer with pip install inquirer!")
+    print("GregHack will now quit.")
+    sys.exit()
 import requests
 
 def cls():
@@ -17,13 +23,13 @@ print("Version 1.25") # increase first number every release, increase second num
 menu = [
   inquirer.List('start',
                 message="GregHack Launcher by Freakybob Team",
-                choices=['Start and Download Levels', 'Exit'],
+                choices=['Start','Download Levels', 'Exit'],
             ),
 ]
 
 answers = inquirer.prompt(menu)
 
-if (answers['start'] == "Start and Download Levels"):
+if (answers['start'] == "Download Levels"):
     print("This will download Level 1 for playing.")
     url = 'https://github.com/Freakybob-Team/greghack/blob/main/game/levels/level1.py?raw=true'
     response = requests.get(url)
@@ -35,6 +41,6 @@ if (answers['start'] == "Start and Download Levels"):
             file.write(response.content)
             print('File downloaded successfully')
     else:
-        print("Oops! There was an error and we couldn't download LigmaBalls.")
+        print("Oops! There was an error and we couldn't download GregHacks levels.")
     print("Done! Level one has been downloaded from https://github.com/Freakybob-Team/greghack/tree/main/game/levels/level1.py")
     exec(open('levels/level1.py').read())
