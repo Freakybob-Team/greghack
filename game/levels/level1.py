@@ -25,7 +25,7 @@ if (cmd.lower() == "infosearch"):
     name = input("name of person: ")
     dob = input("date of birth (mm/dd/year): ")
     if (name == "bob"):
-        if (dob == "6/1/1960"):
+        if (dob == "6/29/1960"):
             print("Searching...")
             time.sleep(3)
             print("Found!")

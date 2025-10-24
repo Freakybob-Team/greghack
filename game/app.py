@@ -35,9 +35,10 @@ if (answers['start'] == "Download Levels"):
         os.mkdir("levels/")
     try:
         urllib.request.urlretrieve("https://github.com/Freakybob-Team/greghack/blob/main/game/levels/level1.py?raw=true", "levels/level1.py")
+        urllib.request.urlretrieve("https://github.com/Freakybob-Team/greghack/blob/main/game/levels/lvl.py?raw=true", "levels/lvl.py")
     except:
         print("Oops! There was an error and we couldn't download GregHacks levels.")
-    print("Done! Level one has been downloaded from https://github.com/Freakybob-Team/greghack/tree/main/game/levels/level1.py")
+    print("Done! Levels were downloaded.")
     exec(open('levels/lvl.py').read())
 
 if (answers['start'] == "Start"):
